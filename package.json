@@ -1,0 +1,58 @@
+{
+  "name": "doubao-dictation",
+  "version": "1.0.0",
+  "description": "Doubao streaming dictation provider for OpenClaw",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "files": [
+    "index.js",
+    "provider.js",
+    "capability-catalog.js",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE",
+    "test/provider.test.js"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "openclaw",
+    "doubao",
+    "volcengine",
+    "dictation",
+    "asr"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.11.2"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "runtimeExtensions": [
+      "./index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.11.2",
+      "minGatewayVersion": "2026.11.2"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kambrian/doubao-dictation.git"
+  },
+  "homepage": "https://github.com/Kambrian/doubao-dictation#readme",
+  "bugs": {
+    "url": "https://github.com/Kambrian/doubao-dictation/issues"
+  },
+  "author": "Kambrian"
+}

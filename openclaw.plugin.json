@@ -1,0 +1,13 @@
+{
+  "id": "doubao-dictation",
+  "name": "Doubao Dictation",
+  "description": "Doubao ASR 2.0 streaming transcription for Gateway dictation",
+  "categories": ["voice"],
+  "capabilityCatalogEntry": "./capability-catalog.js",
+  "activation": { "onStartup": false },
+  "setup": {
+    "providers": [{ "id": "doubao-dictation", "envVars": ["DOUBAO_ASR_API_KEY"] }]
+  },
+  "contracts": { "realtimeTranscriptionProviders": ["doubao-dictation"] },
+  "configSchema": { "type": "object", "additionalProperties": false, "properties": {} }
+}
