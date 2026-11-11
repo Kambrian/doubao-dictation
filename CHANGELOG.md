@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Include the host build metadata required for ClawHub publication.
+
 ## 1.0.0
 
 - Doubao ASR 2.0 streaming dictation with partial and final transcripts.

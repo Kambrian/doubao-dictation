@@ -17,11 +17,11 @@ WebSocket transport.
 
 ## Install
 
-Download `doubao-dictation-1.0.0.tgz` from the
+Download `doubao-dictation-1.0.1.tgz` from the
 [GitHub releases](https://github.com/Kambrian/doubao-dictation/releases), then run:
 
 ```sh
-openclaw plugins install ./doubao-dictation-1.0.0.tgz --force --accept-capabilities
+openclaw plugins install ./doubao-dictation-1.0.1.tgz --force --accept-capabilities
 ```
 
 `--force` acknowledges this local package source; `--accept-capabilities`
