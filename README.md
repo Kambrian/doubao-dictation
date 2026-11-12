@@ -1,5 +1,7 @@
 # Doubao Dictation
 
+作者 / Author：**Jiaxin Han**（GitHub：[@Kambrian](https://github.com/Kambrian)）
+
 ## 中文说明
 
 **给 OpenClaw 加上豆包语音听写：按住麦克风说话，将语音转成输入框中的文字。**
@@ -23,7 +25,7 @@
 下载插件包后安装：
 
 ```sh
-openclaw plugins install ./doubao-dictation-1.0.2.tgz --force --accept-capabilities
+openclaw plugins install ./doubao-dictation-1.0.3.tgz --force --accept-capabilities
 ```
 
 将自己的语音 Key 写入 OpenClaw 状态目录下的 `.env` 文件，默认位置为
@@ -75,11 +77,11 @@ WebSocket transport.
 
 ## Install
 
-Download `doubao-dictation-1.0.2.tgz` from the
+Download `doubao-dictation-1.0.3.tgz` from the
 [GitHub releases](https://github.com/Kambrian/doubao-dictation/releases), then run:
 
 ```sh
-openclaw plugins install ./doubao-dictation-1.0.2.tgz --force --accept-capabilities
+openclaw plugins install ./doubao-dictation-1.0.3.tgz --force --accept-capabilities
 ```
 
 `--force` acknowledges this local package source; `--accept-capabilities`

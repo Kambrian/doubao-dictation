@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+- Credit Jiaxin Han (GitHub: Kambrian) in the README, package metadata, and license.
+
 ## 1.0.2
 
 - Add a Chinese introduction, installation guide, usage notes, and bilingual package descriptions.

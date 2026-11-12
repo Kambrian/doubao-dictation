@@ -1,6 +1,6 @@
 {
   "name": "doubao-dictation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "为 OpenClaw 提供豆包流式语音听写，边说边识别 / Doubao streaming dictation for OpenClaw",
   "type": "module",
   "license": "MIT",
@@ -58,5 +58,8 @@
   "bugs": {
     "url": "https://github.com/Kambrian/doubao-dictation/issues"
   },
-  "author": "Kambrian"
+  "author": {
+    "name": "Jiaxin Han (Kambrian)",
+    "url": "https://github.com/Kambrian"
+  }
 }
