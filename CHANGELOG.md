@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Add a Chinese introduction, installation guide, usage notes, and bilingual package descriptions.
+
 ## 1.0.1
 
 - Include the host build metadata required for ClawHub publication.

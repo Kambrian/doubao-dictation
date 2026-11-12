@@ -1,5 +1,63 @@
 # Doubao Dictation
 
+## 中文说明
+
+**给 OpenClaw 加上豆包语音听写：按住麦克风说话，将语音转成输入框中的文字。**
+
+插件接入火山引擎豆包 ASR 2.0，录音时持续返回识别文本，结束录音后返回最终结果。
+适合习惯用中文语音输入的用户；也可识别服务支持的其他语言。
+
+- **边说边识别**：使用流式接口，无需先上传整段录音文件。
+- **停止后保留文字**：可在输入框中检查、修改，再发送；也可在听写时直接点发送。
+- **保留实时对话**：插件只负责听写，不会替换现有的 Talk 对话服务或聊天模型。
+  在支持该手势的 WebUI 中，轻点麦克风启动 Talk，长按启动听写。
+- **安装方便**：无需 Python、ffmpeg 或额外运行时依赖，直接使用 OpenClaw 的传输能力。
+
+### 安装与配置
+
+需要 OpenClaw **2026.11.2 或更新版本**，以及开通了
+`volc.seedasr.sauc.duration` 资源的火山引擎语音 API Key。
+普通豆包聊天模型的 Key 或其他语音资源权限不一定适用。
+
+从 [GitHub Releases](https://github.com/Kambrian/doubao-dictation/releases)
+下载插件包后安装：
+
+```sh
+openclaw plugins install ./doubao-dictation-1.0.2.tgz --force --accept-capabilities
+```
+
+将自己的语音 Key 写入 OpenClaw 状态目录下的 `.env` 文件，默认位置为
+`~/.openclaw/.env`。使用自定义状态目录时，请写入对应目录。
+
+```dotenv
+DOUBAO_ASR_API_KEY=替换为你自己的语音API密钥
+```
+
+选择听写服务并重启 Gateway：
+
+```sh
+openclaw config set agents.defaults.voiceModel doubao-dictation/bigmodel
+openclaw gateway restart
+openclaw gateway call talk.catalog --json
+```
+
+返回结果中应显示 `transcription.ready: true`，且 `activeProvider` 为
+`doubao-dictation`。此命令会替换原来的默认语音模型；如需恢复，请先记下原值。
+显式配置的其他听写服务可能优先于该默认值。
+
+### 使用范围与隐私
+
+本文的听写入口指 **OpenClaw WebUI**。Android 等原生客户端可能仍调用手机系统的
+语音识别服务，安装本插件不会自动替换那条路径。插件也不提供唤醒词或语音合成。
+
+音频会发送到火山引擎进行识别，可能产生服务费用，请查看自己的计费设置。
+插件本身不保存录音、识别文本或密钥；OpenClaw 的会话历史和诊断记录仍由宿主设置决定。
+请勿把真实密钥提交到 GitHub 或打入插件包。
+
+---
+
+## English
+
 Portable Doubao ASR 2.0 streaming dictation provider for OpenClaw. Returns partial
 text while recording and a final transcript after Stop. No build step, Python,
 ffmpeg, or additional runtime dependencies. The OpenClaw host supplies the
@@ -17,11 +75,11 @@ WebSocket transport.
 
 ## Install
 
-Download `doubao-dictation-1.0.1.tgz` from the
+Download `doubao-dictation-1.0.2.tgz` from the
 [GitHub releases](https://github.com/Kambrian/doubao-dictation/releases), then run:
 
 ```sh
-openclaw plugins install ./doubao-dictation-1.0.1.tgz --force --accept-capabilities
+openclaw plugins install ./doubao-dictation-1.0.2.tgz --force --accept-capabilities
 ```
 
 `--force` acknowledges this local package source; `--accept-capabilities`

@@ -1,7 +1,7 @@
 {
   "name": "doubao-dictation",
-  "version": "1.0.1",
-  "description": "Doubao streaming dictation provider for OpenClaw",
+  "version": "1.0.2",
+  "description": "为 OpenClaw 提供豆包流式语音听写，边说边识别 / Doubao streaming dictation for OpenClaw",
   "type": "module",
   "license": "MIT",
   "engines": {
